@@ -699,22 +699,21 @@ footer {
     font-size: 19px;
   }
   .journal-layout {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
   .cat-corner {
-    position: fixed;
-    top: 70px;
-    right: 40px;
-    width: 300px;
-    text-align: center;
+    position: relative;
+    top: auto;
+    width: min(100%, 430px);
+    margin: auto;
   }
   #home.cat-corner {
     padding: 0;
   }
   .journal-content {
-    min-width: 0;
-    max-width: 620px;
-    margin-right: 360px;
+    width: 100%;
   }
   #reading {
     margin: 0;
