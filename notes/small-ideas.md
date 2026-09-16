@@ -4,7 +4,7 @@ time: 2 min read
 title: Some ideas begin with a very small "what if?"
 ---
 
-A photograph of a pile of books is already a kind of library. You can recognise a cover, remember a sentence, or spot something you've been meaning to read. What if the photograph could become a doorway into those books?
+A photograph of a pile of books    is already a kind of library. You can recognise a cover, remember a sentence, or spot something you've been meaning to read. What if the photograph could become a doorway into those books?
 
 That is a lovely place to begin a small project: with an ordinary thing and a question about what else it could do. Before choosing a framework or planning every feature, there is a moment of curiosity.
 
