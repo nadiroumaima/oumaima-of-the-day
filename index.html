@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Little notes — Oumaima</title>
+    <meta
+      name="description"
+      content="Books, curious thoughts, and a little capybara with a story for you."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="wordmark" href="#home">( oumaima <span>:</span> )</a>
+      <nav><a href="#notes">The notebook ↗</a></nav>
+    </header>
+    <main>
+      <div class="intro-heading">
+        <p class="eyebrow">OUMAIMA’S LITTLE NOTES</p>
+        <p class="handwritten">A quiet corner for my thoughts.</p>
+      </div>
+      <div class="journal-layout">
+        <aside id="home" class="cat-corner" aria-label="Your writing companion">
+          <div class="scene-wrap">
+            <div class="lantern-glow" aria-hidden="true"></div>
+            <button
+              id="companion"
+              aria-label="Let the writing cat choose another note"
+            >
+              <span
+                class="cat-scene"
+                role="img"
+                aria-label="A black cat writing in a book beside steaming coffee, a little duck and a glowing lantern"
+              ></span>
+            </button>
+          </div>
+          <p id="companion-status" aria-live="polite">
+            A little coffee. A little curiosity.
+          </p>
+          <span class="scene-hint">tap the writer for another note</span
+          ><button id="motion" type="button" aria-pressed="false">
+            Pause motion
+          </button>
+        </aside>
+        <div class="journal-content">
+          <section id="reading">
+            <article id="article" tabindex="-1">
+              <div class="meta">
+                <span id="category"></span><span>·</span
+                ><span id="reading-time"></span>
+              </div>
+              <h1 id="title"></h1>
+              <p class="byline">Oumaima Nadir / September 15, 2026</p>
+              <div id="body"></div>
+            </article>
+            <button id="next-note" class="next-note">
+              A note from our little writer ↗
+            </button>
+          </section>
+          <section id="notes" aria-labelledby="notes-title">
+            <div class="notebook-heading">
+              <div>
+                <span class="eyebrow">THE NOTEBOOK</span>
+                <h2 id="notes-title">More little discoveries.</h2>
+              </div>
+              <span id="found-count">0 of 3 discovered</span>
+            </div>
+            <div id="entries"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <span>A small corner of the internet.</span
+      ><span>Oumaima’s little notes ∗</span>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
