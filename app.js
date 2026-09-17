@@ -1,4 +1,4 @@
-const NOTE_FILES = ["small-ideas.md"];
+const NOTE_FILES = ["first_post.md"];
 
 function parseNote(raw) {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
@@ -21,6 +21,7 @@ function parseNote(raw) {
     id: meta.id,
     time: meta.time,
     title: meta.title,
+    date: meta.date,
     body: paragraphs,
   };
 }
@@ -34,7 +35,6 @@ async function loadPosts() {
 
 let posts = [];
 const companion = document.querySelector("#companion"),
-  motion = document.querySelector("#motion"),
   statusLine = document.querySelector("#companion-status");
 const reduce = matchMedia("(prefers-reduced-motion:reduce)");
 let paused = reduce.matches,
@@ -61,6 +61,7 @@ function openPost(i, scroll = false) {
   const p = posts[i];
   document.querySelector("#title").textContent = p.title;
   document.querySelector("#reading-time").textContent = p.time;
+  document.querySelector("#post-date").textContent = p.date;
   document.querySelector("#body").innerHTML = p.body.join("");
   document.title = p.title + " — Oumaima";
   renderEntries();
@@ -78,22 +79,12 @@ function choose() {
   openPost(next, true);
 }
 companion.onclick = choose;
-document.querySelector("#next-note").onclick = choose;
 
-function setMotion() {
-  document.body.classList.toggle("paused", paused);
-  motion.textContent = paused ? "Play motion" : "Pause motion";
-  motion.setAttribute("aria-pressed", String(paused));
+function applyReducedMotion() {
+  document.body.classList.toggle("paused", reduce.matches);
 }
-motion.onclick = () => {
-  paused = !paused;
-  setMotion();
-};
-reduce.addEventListener("change", () => {
-  paused = reduce.matches;
-  setMotion();
-});
-setMotion();
+reduce.addEventListener("change", applyReducedMotion);
+applyReducedMotion();
 
 loadPosts().then((loaded) => {
   posts = loaded;
